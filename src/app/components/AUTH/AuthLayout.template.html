@@ -1,0 +1,61 @@
+<div fxLayout="column wrap" style="height: 100vh; background-image: linear-gradient(#005CCD, #002F74); position: relative; overflow: hidden;" class="rocket-container" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true"><bh-Loading style="position: absolute; z-index: 65;" *ngIf="page.loading"></bh-Loading><bh-Modal style="position: absolute; z-index: 55;" (click)="popup()" [heading]="page.modalHeading" [content]="page.modalContent" *ngIf="page.show == true" [image]="page.modalImage"></bh-Modal>
+  <div fxLayout="row wrap" style="width: 100%; height: 12vh;" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div *ngIf="page.count == 0" style=" width: 65%;">
+      <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690022337/Frame_6_psrbmb.png&apos;" style="left: 0;     width: 3.5rem;     position: absolute;     top: 0;     margin: 14px; z-index: 10;">
+    </div>
+    <div *ngIf="page.count == 0" style=" width: 65%;">
+      <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690021402/Rectangle_2556_nncxkt.png&apos;" style="left: 0;     width: 18rem;     position: absolute;     top: 0;     margin: -22px;">
+    </div>
+    <div style=" width: 45%;">
+      <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690019227/Ellipse_24_kjwadc.png&apos;" style="right: 0;     width: 18rem;     position: absolute;     top: 0;   margin: -8em;  ">
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="width: 100%; height: 10rem; padding-bottom: 2rem;" fxLayoutAlign="end end" [fxShow]="true">
+    <div *ngIf="page.count == 0" style=" ">
+      <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690021406/Group_13403_atijpl.png&apos;" [ngClass]="{&apos;animate-rocket&apos;: page.animate}" class="rocket">
+    </div>
+    <div *ngIf="page.count == 0" style="display: flex; flex-direction: column; color: white; text-align: end; padding-right: 1.6rem;">
+      <span style="font-size: 22px;">Welcome to the</span>
+      <span style="font-size: 22px; font-weight: 600;">New Neutriverse.</span>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="height: 50vh; width: 90%; position: absolute;" fxLayoutAlign="space-evenly stretch" [fxShow]="true" *ngIf="page.count == 1">
+    <h1 style="color: white;">
+      {{page.data[page.count].heading1}}
+    </h1>
+    <div style="color: #273453; display: flex; flex-direction: column; font-size: 18px;     justify-content: space-evenly;     height: 30%;">
+      <span style="color: white;">{{page.data[page.count].heading2}}</span>
+      <span style="font-weight: 700; color: white;">{{page.email}}</span>
+      <div fxLayout="row wrap" style="width: 100%; height: 15%; color: white; position: relative;" fxLayoutAlign="space-evenly center" [fxShow]="true" *ngIf="page.data[page.count].otp"><mat-icon style="position:absolute;right:5%;top:40%;color:black;">keyboard_arrow_right</mat-icon>
+        <mat-form-field style="width:100%" class="otp-input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="otpInput" type="number" [required]="false" (click)="submit($event.target.value)" minlength="6" maxlength="6" [formControl]="page.userInput" id="input1">
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="height: 10%; width: 100%;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div>
+        <div *ngIf="page.error" style="color: red;">{{page.modalContent}}</div>
+        <div id="timer">{{ page.timerDisplay }}</div>
+      </div>
+    </div><span (click)="viahelp()" *ngIf="page.clickotp" style="color: white;">
+                Didn&apos;t receive link? <a style="color: white !important;">Resend</a></span>
+  </div>
+  <div fxLayout="column wrap" style="height: 60vh; width: 90%; background: white; border-radius: 12px;     bottom: 6%;     position: absolute;" fxLayoutAlign="space-evenly center" [fxShow]="true" *ngIf="page.count == 0">
+    <div fxLayout="column wrap" style="height: 55%; width: 85%;" fxLayoutAlign="space-evenly stretch" [fxShow]="true">
+      <div *ngFor="let input of page.data[page.count].inputs" style="width: 100%;">
+
+        <mat-form-field style="width: 100%;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;always&apos;" [hideRequiredMarker]="false">
+          <input matInput [required]="false" [ngClass]="input.label === &apos;Phone&apos; ? &apos;phone&apos; : null" (change)="values(input.value == &apos;email&apos; ? $event.target.value : page.email,input.value == &apos;name&apos; ? $event.target.value : page.name,input.value == &apos;phone&apos; ? $event.target.value : page.phone)">
+          <mat-label>{{input.label}}</mat-label>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="height: 30%; width: 85%;" fxLayoutAlign="space-evenly center" [fxShow]="true">
+      <div *ngFor="let button of page.data[page.count].buttons" style="width: 100%; position: relative;">
+        <button mat-button style="height: 100%; width: 100%; background: #005FD3; color: white;" (click)="buttonSwap(button.name)">{{button.name}}</button>
+      </div>
+    </div><span [innerHTML]="page.data[page.count].hyperlink" id="`${page.count != 0 ? &apos;hyper&apos; : null}`" (click)="viahelp()">
+                </span>
+  </div>
+</div>

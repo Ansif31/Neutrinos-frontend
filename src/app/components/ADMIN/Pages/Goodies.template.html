@@ -1,0 +1,19 @@
+<div fxLayout="column wrap" style="width: 100vw; height: 100vh; background: rgba(0, 0, 0, 1.8);" fxLayoutAlign="center center" [fxShow]="true"><bh-Modal style="position: absolute; z-index: 50;" (click)="modal()" [heading]="page.modalHeading" [content]="page.modalContent" *ngIf="page.modal== true" [image]="page.modalImage"></bh-Modal>
+  <div fxLayout="column wrap" style="width: 80%; height: 60vh;" fxLayoutAlign="space-evenly center" [fxShow]="true">
+    <div fxLayout="row wrap" style="width: 100%; height: 50%;" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div style="width: 45%;">
+        <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690280371/image_14_zsqvdg.png&apos;" style="width: 100%;">
+        <h1 style="color: white; font-size: 20px; text-align: center;">Size: {{page.hoodiesize || &quot;NIL&quot;}}</h1>
+      </div>
+      <div style="width: 45%;">
+        <img [src]="&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1690280365/image_13_wcr6qn.png&apos;" style="width: 100%;">
+        <h1 style="color: white; font-size: 20px; text-align: center;">Size: {{page.tshirtsize || &quot;NIL&quot;}}</h1>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width: 100%;" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div>
+        Email: {{page.userEmail}}</div>
+    </div>
+    <div fxLayout="row wrap" style="width: 100%;" fxLayoutAlign="space-evenly stretch" [fxShow]="true"><button mat-button style="background: green; border-radius: 20px; width: 50%; height: 5vh !important; color: white;" (click)="markedAsClaimed()">Claim</button></div>
+  </div>
+</div>

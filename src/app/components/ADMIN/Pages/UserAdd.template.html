@@ -1,0 +1,23 @@
+<div fxLayout="column wrap" style="width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.9);" fxLayoutAlign="center center" [fxShow]="true"><bh-Modal style="position: absolute; z-index: 55;" (click)="popup()" [heading]="page.modalHeading" [content]="page.modalContent" *ngIf="page.show == true" [image]="page.modalImage"></bh-Modal>
+  <div fxLayout="column wrap" style="width: 80%; height: 80vh;" fxLayoutAlign="space-evenly center" [fxShow]="true">
+    <div fxLayout="column wrap" style="height: 50%; width: 100%; background: white; border-radius: 30px;" fxLayoutAlign="space-evenly center" [fxShow]="true">
+      <mat-form-field style="width: 90%;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;always&apos;" [hideRequiredMarker]="false">
+        <input matInput [required]="false" (change)="userDetails($event.target.value,page.body.email,page.body.phone,page.body.admin)">
+        <mat-label>Name</mat-label>
+      </mat-form-field>
+      <mat-form-field style="width:90%;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;always&apos;" [hideRequiredMarker]="false">
+        <input matInput [required]="false" (change)="userDetails(page.body.name,$event.target.value,page.body.phone,page.body.admin)">
+        <mat-label>Email</mat-label>
+      </mat-form-field>
+      <mat-form-field style="width:90%;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;always&apos;" [hideRequiredMarker]="false">
+        <input matInput [required]="false" (change)="userDetails(page.body.name,page.body.email,$event.target.value,page.body.admin)">
+        <mat-label>Phone</mat-label>
+      </mat-form-field>
+      <mat-form-field style="width: 90%;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;always&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Enter Admin  Name" [required]="false" (change)="userDetails(page.body.name,page.body.email,page.body.phone,$event.target.value)">
+        <mat-label>Admin</mat-label>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" style="width: 100%; height: 10%;" fxLayoutAlign="space-evenly stretch" [fxShow]="true"><button mat-button style="background: blue; border-radius: 20px: width: 50%; height: 5vh; color: white;" (click)="submitCreateUser()">Submit</button></div>
+  </div>
+</div>

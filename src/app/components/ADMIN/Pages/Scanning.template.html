@@ -1,0 +1,25 @@
+<div fxLayout="column wrap" style="width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.9);" fxLayoutAlign="center center" [fxShow]="true"><bh-Goodies style="position: absolute; z-index: 60;" *ngIf="page.goodies === true" [hoodiesize]="page.size.hoodiesize" [tshirtsize]="page.size.tshirtsize" [userEmail]="page.scannedId" (changeValue)="sd_d8pg7O7E8ub9nUFv($event)"></bh-Goodies>
+  <div fxLayout="column wrap" style="width: 90%; height: 80vh;" fxLayoutAlign="space-evenly center" [fxShow]="true">
+    <h1 style="width: 100%; text-align: center; color: white; z-index: 25; font-size: 26px;">
+      Scan the QR code of the device</h1><span style="z-index: 25; width: 85%; text-align: center;">
+                <div (click)="action.isStart ? action.stop(): action.start()">
+    <ngx-scanner-qrcode #action="scanner" (data)="page.output = ($event)">
+    </ngx-scanner-qrcode>
+    <!-- data  -->
+</div>
+<div style="text-align:left; margin-top: 10px; margin-left: 5px; ">
+    <div>
+        <span *ngIf="action?.data?.value[0]?.value &amp;&amp; page.scannedId === &apos;nothing&apos;">{{scannedData(action?.data?.value[0]?.value)}}</span><!-- value -->
+    <!-- <span>{{ action.data | async | json }}</span> -->
+    <!-- async -->
+    <!-- Loading -->
+    <!-- <p *ngIf="action.isLoading">⌛ Loading...</p> -->
+  </div>
+  <!-- start -->
+  <!-- <button (click)="action.isStart ? action.stop() : action.start()" class="scanner-btn">{{action.isStart ? 'Stop' : 'Start'}}</button> -->
+</div></span>
+<div>
+  <button *ngIf="page.show ? action.stop() : action.start()">Turn off</button>
+</div><span style="    width: 80%;     text-align: center;     color: white;     font-size: 16px;">
+                Please touch the black portion, QR code will be detected when aligned with the guide lines.</span></div>
+</div>

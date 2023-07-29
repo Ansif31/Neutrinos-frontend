@@ -1,0 +1,85 @@
+<div fxLayout="column wrap" style="height: 100vh; background-image: linear-gradient(#005CCD, #002F74); position: relative; overflow: hidden; position: relative;" fxFlex="100" fxLayoutAlign="space-evenly center" [fxShow]="true"><bh-UserAdd style="position: absolute; z-index: 50;" *ngIf="page.userAdd == true"></bh-UserAdd><button mat-button style="right: 0;     width: 6rem;     position: absolute;     top: 0;   margin-top: 1.6em; z-index: 1;  " (click)="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none">
+      <path d="M20.5 25.5H17.1667C16.7246 25.5 16.3007 25.3244 15.9882 25.0118C15.6756 24.6993 15.5 24.2754 15.5 23.8333V12.1667C15.5 11.7246 15.6756 11.3007 15.9882 10.9882C16.3007 10.6756 16.7246 10.5 17.1667 10.5H20.5M26.3333 22.1667L30.5 18M30.5 18L26.3333 13.8333M30.5 18H20.5" stroke="black" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2.508 40.668H5.268V42H0.828V33.624H2.508V40.668ZM9.28781 42.108C8.64781 42.108 8.07181 41.968 7.55981 41.688C7.04781 41.4 6.64381 40.996 6.34781 40.476C6.05981 39.956 5.91581 39.356 5.91581 38.676C5.91581 37.996 6.06381 37.396 6.35981 36.876C6.66381 36.356 7.07581 35.956 7.59581 35.676C8.11581 35.388 8.69581 35.244 9.33581 35.244C9.97581 35.244 10.5558 35.388 11.0758 35.676C11.5958 35.956 12.0038 36.356 12.2998 36.876C12.6038 37.396 12.7558 37.996 12.7558 38.676C12.7558 39.356 12.5998 39.956 12.2878 40.476C11.9838 40.996 11.5678 41.4 11.0398 41.688C10.5198 41.968 9.93581 42.108 9.28781 42.108ZM9.28781 40.644C9.59181 40.644 9.87581 40.572 10.1398 40.428C10.4118 40.276 10.6278 40.052 10.7878 39.756C10.9478 39.46 11.0278 39.1 11.0278 38.676C11.0278 38.044 10.8598 37.56 10.5238 37.224C10.1958 36.88 9.79181 36.708 9.31181 36.708C8.83181 36.708 8.42781 36.88 8.09981 37.224C7.77981 37.56 7.61981 38.044 7.61981 38.676C7.61981 39.308 7.77581 39.796 8.08781 40.14C8.40781 40.476 8.80781 40.644 9.28781 40.644ZM16.5922 35.244C17.0882 35.244 17.5242 35.344 17.9002 35.544C18.2762 35.736 18.5722 35.988 18.7882 36.3V35.352H20.4802V42.048C20.4802 42.664 20.3562 43.212 20.1082 43.692C19.8602 44.18 19.4882 44.564 18.9922 44.844C18.4962 45.132 17.8962 45.276 17.1922 45.276C16.2482 45.276 15.4722 45.056 14.8642 44.616C14.2642 44.176 13.9242 43.576 13.8442 42.816H15.5122C15.6002 43.12 15.7882 43.36 16.0762 43.536C16.3722 43.72 16.7282 43.812 17.1442 43.812C17.6322 43.812 18.0282 43.664 18.3322 43.368C18.6362 43.08 18.7882 42.64 18.7882 42.048V41.016C18.5722 41.328 18.2722 41.588 17.8882 41.796C17.5122 42.004 17.0802 42.108 16.5922 42.108C16.0322 42.108 15.5202 41.964 15.0562 41.676C14.5922 41.388 14.2242 40.984 13.9522 40.464C13.6882 39.936 13.5562 39.332 13.5562 38.652C13.5562 37.98 13.6882 37.384 13.9522 36.864C14.2242 36.344 14.5882 35.944 15.0442 35.664C15.5082 35.384 16.0242 35.244 16.5922 35.244ZM18.7882 38.676C18.7882 38.268 18.7082 37.92 18.5482 37.632C18.3882 37.336 18.1722 37.112 17.9002 36.96C17.6282 36.8 17.3362 36.72 17.0242 36.72C16.7122 36.72 16.4242 36.796 16.1602 36.948C15.8962 37.1 15.6802 37.324 15.5122 37.62C15.3522 37.908 15.2722 38.252 15.2722 38.652C15.2722 39.052 15.3522 39.404 15.5122 39.708C15.6802 40.004 15.8962 40.232 16.1602 40.392C16.4322 40.552 16.7202 40.632 17.0242 40.632C17.3362 40.632 17.6282 40.556 17.9002 40.404C18.1722 40.244 18.3882 40.02 18.5482 39.732C18.7082 39.436 18.7882 39.084 18.7882 38.676ZM27.9323 42.108C27.2923 42.108 26.7163 41.968 26.2043 41.688C25.6923 41.4 25.2883 40.996 24.9923 40.476C24.7043 39.956 24.5603 39.356 24.5603 38.676C24.5603 37.996 24.7083 37.396 25.0043 36.876C25.3083 36.356 25.7203 35.956 26.2403 35.676C26.7603 35.388 27.3403 35.244 27.9803 35.244C28.6203 35.244 29.2003 35.388 29.7203 35.676C30.2403 35.956 30.6483 36.356 30.9443 36.876C31.2483 37.396 31.4003 37.996 31.4003 38.676C31.4003 39.356 31.2443 39.956 30.9323 40.476C30.6283 40.996 30.2123 41.4 29.6843 41.688C29.1643 41.968 28.5803 42.108 27.9323 42.108ZM27.9323 40.644C28.2363 40.644 28.5203 40.572 28.7843 40.428C29.0563 40.276 29.2723 40.052 29.4323 39.756C29.5923 39.46 29.6723 39.1 29.6723 38.676C29.6723 38.044 29.5043 37.56 29.1683 37.224C28.8403 36.88 28.4363 36.708 27.9563 36.708C27.4763 36.708 27.0723 36.88 26.7443 37.224C26.4243 37.56 26.2643 38.044 26.2643 38.676C26.2643 39.308 26.4203 39.796 26.7323 40.14C27.0523 40.476 27.4523 40.644 27.9323 40.644ZM38.9087 35.352V42H37.2167V41.16C37.0007 41.448 36.7167 41.676 36.3647 41.844C36.0207 42.004 35.6447 42.084 35.2367 42.084C34.7167 42.084 34.2567 41.976 33.8567 41.76C33.4567 41.536 33.1407 41.212 32.9087 40.788C32.6847 40.356 32.5727 39.844 32.5727 39.252V35.352H34.2527V39.012C34.2527 39.54 34.3847 39.948 34.6487 40.236C34.9127 40.516 35.2727 40.656 35.7287 40.656C36.1927 40.656 36.5567 40.516 36.8207 40.236C37.0847 39.948 37.2167 39.54 37.2167 39.012V35.352H38.9087ZM42.5223 36.732V39.948C42.5223 40.172 42.5743 40.336 42.6783 40.44C42.7903 40.536 42.9743 40.584 43.2303 40.584H44.0103V42H42.9543C41.5383 42 40.8303 41.312 40.8303 39.936V36.732H40.0383V35.352H40.8303V33.708H42.5223V35.352H44.0103V36.732H42.5223Z" fill="black" />
+    </svg></button><button mat-button style="left: 1rem;     width: 4rem;     position: absolute;     top: 0;   margin-top: 1.6em;   z-index: 55; " *ngIf="page.show=== true || page.userAdd === true" (click)="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffff" version="1.1" id="Capa_1" viewBox="0 0 26.676 26.676" xml:space="preserve">
+      <g>
+        <path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59   c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815   C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029   c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562   C26.18,21.891,26.141,21.891,26.105,21.891z" />
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+        <g> </g>
+      </g>
+    </svg></button><bh-Scanning style="position: absolute; z-index: 50;" *ngIf="page.show == true" (changes)="sd_yPYV1JLqgM6os9T9($event)"></bh-Scanning>
+  <div fxLayout="row wrap" style="width: 100%; padding: 5%;" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div style="display: flex; flex-direction: column; color: white; text-align: start;">
+      <span style="font-size: 15px;">Hello,</span>
+      <span style="font-size: 30px; font-weight: 600;">Admin</span>
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="width: 90%; background: white; border-radius: 30px; height: 6%; padding-left: 5%;" fxLayoutAlign="start center" [fxShow]="true"><mat-icon>search</mat-icon>
+    <mat-form-field style="border: none !important; margin-left: 5%;" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+      <input matInput placeholder="Search" [required]="false" (change)="search($event.target.value)">
+
+    </mat-form-field>
+  </div>
+  <div fxLayout="column wrap" style="width: 90%; height: 75vh;" fxLayoutAlign="space-evenly stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="width: 100%;" fxLayoutAlign="start center" [fxShow]="true">
+      <div style="width: 20%;  text-align: center; font-size: 16px; font-weight: 600;">
+        Name</div>
+      <div style="    width: 20%;     text-align: center; font-size: 16px; font-weight: 600;">
+        Email</div>
+      <div style="width: 20%; text-align: center; font-size: 16px; font-weight: 600;">
+        T-Shirt</div>
+      <div style="width: 20%; text-align: center; font-size: 16px; font-weight: 600;">
+        Hoodies</div>
+      <div style="width: 20%;  text-align: center; font-size: 16px; font-weight: 600;">
+        Claimed</div>
+    </div>
+    <div fxLayout="column " style="width: 100%; overflow-y: scroll; height: 90%; color: black; background: white; border-radius: 30px;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="width: 100%; margin-top: 10%;" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let user of page.userData">
+        <div style="width: 20%;   overflow: scroll;">
+          {{user.username}}
+        </div>
+        <div style="width: 20%;   overflow: scroll; padding-left: 10px; padding: right: 10px;">
+          {{user.email}}
+        </div>
+        <div style="width: 20%; text-align: center;">
+          {{user.tshirtsize}}
+        </div>
+        <div style="width: 20%; text-align: center;">
+          {{user.hoodiesize}}
+        </div>
+        <div [ngStyle]="user.claimed === true ? {&apos;color&apos;: &apos;green&apos;} : {&apos;color&apos;: &apos;red&apos;}" style="width: 20%; text-align: center;">
+          {{user.claimed}}
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width: 100%; position: relative;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="background: black; width: 75px; position: absolute; bottom: 0; right: 5rem; height: 75px; border-radius: 50%;">
+        <button mat-button style="width: 80%; position: absolute;     bottom: 1.2rem;     right: 0.4rem;" (click)="userAdd()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3267 15.0759C12.8886 15.0255 12.4452 15 12 15C10.0805 15 8.19383 15.4738 6.63113 16.3732C5.06902 17.2721 3.88124 18.5702 3.33091 20.1106C3.1451 20.6307 3.41608 21.203 3.93617 21.3888C4.45626 21.5746 5.02851 21.3036 5.21432 20.7835C5.57558 19.7723 6.39653 18.8157 7.62872 18.1066C8.64272 17.523 9.86375 17.1503 11.158 17.0368C11.4889 16.0601 12.3091 15.3092 13.3267 15.0759Z" fill="white" />
+            <path d="M18 14L18 22" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M22 18L14 18" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+          </svg></button>
+      </div>
+      <div style="background: grey; width: 75px; position: absolute; bottom: 0; right: 0; height: 75px; border-radius: 50%;">
+        <button mat-button style="width: 80%; position: absolute;        bottom: 1.1rem;     right: 0.3rem; fill: white;" (click)="scanning()"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 122.61 122.88">
+            <title>scan</title>
+            <path d="M23.38,0h13V11.15h-13a12.22,12.22,0,0,0-8.64,3.57l0,0a12.22,12.22,0,0,0-3.57,8.64V39.32H0V23.38A23.32,23.32,0,0,1,6.86,6.89l0,0A23.31,23.31,0,0,1,23.38,0ZM3.25,54.91H119.36a3.29,3.29,0,0,1,3.25,3.27V64.7A3.29,3.29,0,0,1,119.36,68H3.25A3.28,3.28,0,0,1,0,64.7V58.18a3.27,3.27,0,0,1,3.25-3.27ZM90.57,0h8.66a23.28,23.28,0,0,1,16.49,6.86v0a23.32,23.32,0,0,1,6.87,16.52V39.32H111.46V23.38a12.2,12.2,0,0,0-3.6-8.63v0a12.21,12.21,0,0,0-8.64-3.58H90.57V0Zm32,81.85V99.5a23.46,23.46,0,0,1-23.38,23.38H90.57V111.73h8.66A12.29,12.29,0,0,0,111.46,99.5V81.85Zm-86.23,41h-13A23.32,23.32,0,0,1,6.86,116l-.32-.35A23.28,23.28,0,0,1,0,99.5V81.85H11.15V99.5a12.25,12.25,0,0,0,3.35,8.41l.25.22a12.2,12.2,0,0,0,8.63,3.6h13v11.15Z" />
+          </svg></button>
+      </div>
+    </div>
+  </div>
+</div>
